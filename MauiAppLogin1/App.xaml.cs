@@ -7,11 +7,14 @@ namespace MauiAppLogin1
         public App()
         {
             InitializeComponent();
+            MainPage = new Login();
         }
-
-        protected override Window CreateWindow(IActivationState? activationState)
+        protected override Window CreateWindow(IActivationState activationState)
         {
-            return new Window(new AppShell());
+            var window = base.CreateWindow(activationState);
+            window.Width = 400;
+            window.Height = 600;
+            return window;
         }
-    }
-}
+    } // Fecha classe
+} // Fecha namespace
